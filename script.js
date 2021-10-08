@@ -21,6 +21,11 @@ class Birb{
       this.vy = 0;
       this.y = 380;
     }
+    //Niet door het dak
+    if(this.y < 0){
+      this.vy = 0;
+      this.y = 0;
+    }
   }
 }
 
