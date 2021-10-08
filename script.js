@@ -3,12 +3,16 @@ class Birb{
     this.x = x;
     this.y = y;
     this.vy = 0;
+    this.gravity = 0.2;
   }
 
    //Cirkel maken
   drawBirb() {
     fill("red");
     circle(this.x, this.y, 10)
+
+    //Zwaartekracht
+    this.vy += this.gravity;
 
     this.y += this.vy;
   }
