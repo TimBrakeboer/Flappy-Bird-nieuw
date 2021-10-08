@@ -36,3 +36,10 @@ function draw() {
 
   birb.drawBirb();
 }
+
+//bestuurbaar maken
+function keyPressed() {
+	if(keyCode == 32){
+    birb.vy -= 5;
+  }
+}
