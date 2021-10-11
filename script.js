@@ -29,17 +29,48 @@ class Birb{
   }
 }
 
+
+class Pipe {
+  constructor(x, y, h) {
+    this.x = x;
+    this.y = y;
+    this.h = h;
+  }
+
+  drawPipe() {
+    fill("green")
+    rect(this.x, this.y, 50, this.h);
+    this.x = this.x - 5;
+  }
+}
+
+var birb, pipe, pipe2;
+var pipes = [];
+
 function setup() {
 	createCanvas(500, 400);
 
   birb = new Birb(100, 200);
+console.log(pipes);
 }
 
-var rectX = 400;
+
 function draw() {
-	background(225);
+  background(225);
+
+
+  if(frameCount % 60 == 0){
+    //console.log("draw pipe!");
+
+    let randomHeight = random(height - 150)
+
+    pipes.push(new Pipe(800,0, randomHeight));
+    pipes.push(new Pipe(800,randomHeight + 100, 1000));
+  }
 
   birb.drawBirb();
+
+  pipes.forEach(p => p.drawPipe());
 }
 
 //bestuurbaar maken
