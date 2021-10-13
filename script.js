@@ -44,19 +44,25 @@ class Pipe {
   }
 }
 
+function preload() {
+  bg = loadImage('bg.png');
+}
+
 var birb, pipe, pipe2;
 var pipes = [];
+var bg;
 
 function setup() {
-	createCanvas(500, 400);
+  createCanvas(580, 360);
 
   birb = new Birb(100, 200);
-console.log(pipes);
+
+  console.log(pipes);
 }
 
 
 function draw() {
-  background(225);
+   image(bg, 0, 0, width, height);
 
 
   if(frameCount % 60 == 0){
