@@ -17,9 +17,9 @@ class Birb{
     this.y += this.vy;
 
     //Niet door de grond
-    if(this.y > 380){
+    if(this.y > 340){
       this.vy = 0;
-      this.y = 380;
+      this.y = 340;
     }
     //Niet door het dak
     if(this.y < 0){
