@@ -1,22 +1,19 @@
 var birb, pipe, pipe2;
 var pipes = [];
-var bg;
+var bg, birb_img;
 
 class Birb {
   constructor(x, y) {
     this.x = x;
     this.y = y;
     this.vy = 0;
-    this.w = 10;
-    this.h = 10;
+    this.w = 25;
+    this.h = 25;
     this.gravity = 0.2;
   }
 
   //Cirkel maken
   drawBirb() {
-    fill("red");
-    rect(this.x, this.y, this.w, this.h)
-
     //Zwaartekracht
     this.vy += this.gravity;
 
@@ -32,6 +29,7 @@ class Birb {
       this.vy = 0;
       this.y = 0;
     }
+    image(birb_bg, this.x, this.y, this.w, this.h);
   }
 }
 
@@ -66,6 +64,7 @@ class Pipe {
 //achtergrond
 function preload() {
   bg = loadImage('bg.png');
+  birb_bg = loadImage('birb.png');
 }
 
 //Grootte van speelveld en positie figuur
